@@ -72,14 +72,14 @@
     }
 
     .hero {
-      padding: 72px 0 56px;
+      padding: 56px 0 48px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 36px;
-      align-items: center;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 44px;
+      align-items: stretch;
     }
 
     .eyebrow {
@@ -139,13 +139,55 @@
   background-position: center;
   border: 1px solid var(--border);
   border-radius: 28px;
-  min-height: 480px;
-  padding: 40px;
+  min-height: 560px;
+  padding: 36px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
   box-shadow: 0 20px 50px rgba(79, 62, 41, 0.08);
   position: relative;
+  overflow: hidden;
+}
+
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(248,244,238,0.78), rgba(248,244,238,0.08));
+}
+
+.hero-story {
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,0.88);
+  padding: 24px 28px;
+  border-radius: 18px;
+  max-width: 440px;
+  color: var(--text);
+  font-size: 0.98rem;
+  box-shadow: 0 10px 24px rgba(62, 55, 47, 0.08);
+}
+
+.hero-banner-title {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 18px;
+  color: #6f4a33;
+}
+
+.hero-banner-title h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.4rem, 4.2vw, 5rem);
+  line-height: 1.02;
+  margin-bottom: 10px;
+}
+
+.hero-banner-title p {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a6549;
 }
 
 .hero-story {
@@ -297,11 +339,11 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Elevated DIY DIY art</div>
-          <h1>Minimal wall art kits for calm, beautiful spaces.</h1>
+          <div class="eyebrow">Elevated DIY art</div>
+          <h1>Minimal DIY art for calm, beautiful spaces.</h1>
           <p>
             Kalpaa Studio creates elegant DIY art kits inspired by natural materials,
-            sculptural folds, and warm neutral interiors.
+            sculptural forms, and warm neutral interiors.
           </p>
           <div class="buttons">
             <a class="btn btn-primary" href="https://sweety441.etsy.com" target="_blank" rel="noopener noreferrer">Shop on Etsy</a>
@@ -310,6 +352,10 @@
         </div>
 
         <div class="hero-visual" aria-label="Kalpaa Studio natural materials studio">
+          <div class="hero-banner-title">
+            <h2>Kalpaa Studio</h2>
+            <p>Crafted DIY Art for Calm Homes</p>
+          </div>
           <div class="hero-story">
             Inspired by natural materials, warm textures, and the quiet beauty of handmade craft, Kalpaa Studio creates DIY art experiences that bring calm creativity into the home. Each kit celebrates natural elements, thoughtful design, and the simple goodness of making something beautiful with your hands.
           </div>
