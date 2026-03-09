@@ -1,100 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Kalpaa Studio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalpaa Studio</title>
+  <meta name="description" content="Kalpaa Studio creates elegant DIY art kits for calm, beautiful spaces." />
+  <style>
+    :root {
+      --bg: #f8f4ee;
+      --card: #fffdf9;
+      --text: #3e372f;
+      --muted: #7a6f63;
+      --accent: #c8b39c;
+      --accent-dark: #a68e73;
+      --border: #e7ddd1;
+    }
 
-<style>
+    * { box-sizing: border-box; }
 
-body{
-font-family: Arial, Helvetica, sans-serif;
-margin:0;
-background:#f7f4ef;
-color:#333;
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin-top: 0;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(248, 244, 238, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 20px;
+    }
+
+    .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 72px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.08;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 540px;
+      color: var(--muted);
+      font-size: 1.06rem;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-dark);
+      transition: 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+    }
+
+    .btn-secondary:hover {
+      background: #f2e8dc;
+    }
+
+    .hero-visual {
+  background-image: url('studio-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  min-height: 480px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 50px rgba(79, 62, 41, 0.08);
+  position: relative;
 }
 
-header{
-padding:40px;
-text-align:center;
-background:white;
-border-bottom:1px solid #eee;
+.hero-story {
+  background: rgba(255,255,255,0.85);
+  padding: 24px 28px;
+  border-radius: 16px;
+  max-width: 420px;
+  color: var(--text);
+  font-size: 0.98rem;
 }
 
-h1{
-font-size:40px;
-letter-spacing:3px;
-}
+    .panel-set {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
 
-.hero{
-padding:80px 20px;
-text-align:center;
-}
+    .panel {
+      width: 120px;
+      height: 220px;
+      background: #f5efe5;
+      border-radius: 8px;
+      border: 1px solid #e6dbcb;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(62, 55, 47, 0.08);
+    }
 
-.hero h2{
-font-size:32px;
-font-weight:300;
-}
+    .fold {
+      position: absolute;
+      background: linear-gradient(180deg, #dfd2bf 0%, #f8f2e8 35%, #d6c3aa 100%);
+      border-radius: 50% 50% 42% 42%;
+      opacity: 0.95;
+      filter: drop-shadow(0 10px 10px rgba(0,0,0,0.06));
+    }
 
-.button{
-display:inline-block;
-padding:14px 28px;
-margin-top:20px;
-background:#c5b49b;
-color:white;
-text-decoration:none;
-border-radius:30px;
-}
+    .fold.one { width: 90px; height: 160px; left: 14px; top: 28px; }
+    .fold.two { width: 84px; height: 150px; left: 18px; top: 36px; transform: rotate(8deg); }
+    .fold.three { width: 88px; height: 156px; left: 16px; top: 30px; transform: rotate(-6deg); }
 
-.section{
-padding:80px 20px;
-text-align:center;
-max-width:900px;
-margin:auto;
-}
+    section {
+      padding: 64px 0;
+    }
 
-footer{
-padding:40px;
-text-align:center;
-color:#777;
-}
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
 
-</style>
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 30px;
+    }
 
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 14px 36px rgba(79, 62, 41, 0.04);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .about-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+    }
+
+    .contact-box {
+      text-align: center;
+      background: linear-gradient(180deg, #fffaf5, #f7efe4);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 42px 24px;
+    }
+
+    footer {
+      padding: 28px 0 46px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .cards,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 340px;
+      }
+
+      .panel { width: 90px; height: 170px; }
+    }
+
+    @media (max-width: 560px) {
+      .nav { flex-direction: column; align-items: flex-start; }
+      .nav-links { gap: 14px; }
+      .hero { padding-top: 42px; }
+      .panel-set { gap: 10px; }
+      .panel { width: 74px; height: 140px; }
+      .fold.one, .fold.two, .fold.three { width: 56px; height: 100px; left: 9px; top: 20px; }
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand">KALPAA STUDIO</a>
+      <nav class="nav-links">
+        <a href="https://www.instagram.com/kalpaacrafts/" target="_blank">Instagram</a>
+        <a href="#home">Home</a>
+        <a href="#product">Product</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-<h1>KALPAA STUDIO</h1>
-</header>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Elevated DIY DIY art</div>
+          <h1>Minimal wall art kits for calm, beautiful spaces.</h1>
+          <p>
+            Kalpaa Studio creates elegant DIY art kits inspired by natural materials,
+            sculptural folds, and warm neutral interiors.
+          </p>
+          <div class="buttons">
+            <a class="btn btn-primary" href="https://sweety441.etsy.com" target="_blank" rel="noopener noreferrer">Shop on Etsy</a>
+            <a class="btn btn-secondary" href="#product">View Product</a>
+          </div>
+        </div>
 
-<section class="hero">
+        <div class="hero-visual" aria-label="Kalpaa Studio natural materials studio">
+          <div class="hero-story">
+            Inspired by natural materials, warm textures, and the quiet beauty of handmade craft, Kalpaa Studio creates DIY art experiences that bring calm creativity into the home. Each kit celebrates natural elements, thoughtful design, and the simple goodness of making something beautiful with your hands.
+          </div>
+        </div>
+      </div>
+            <div class="panel"><div class="fold two"></div></div>
+            <div class="panel"><div class="fold three"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<h2>Minimal DIY textile art for calm spaces</h2>
+    <section id="product">
+      <div class="container">
+        <h2 class="section-title">Featured Product</h2>
+        <p class="section-subtitle">
+          A refined DIY art experience designed to help beginners create premium-looking DIY wall decor with guided structure and simple materials.
+        </p>
 
-<a class="button" href="https://sweety441.etsy.com">
-Shop on Etsy
-</a>
+        <div class="cards">
+          <article class="card">
+            <h3>DIY Art Kit</h3>
+            <p>Create a soft, minimal handmade wall art piece with a calm neutral aesthetic.</p>
+            <a class="btn btn-secondary" href="https://sweety441.etsy.com" target="_blank" rel="noopener noreferrer">Buy on Etsy</a>
+          </article>
 
-</section>
+          <article class="card">
+            <h3>Beginner Friendly</h3>
+            <p>Designed with guided placement so the process feels simple, elegant, and approachable.</p>
+          </article>
 
-<section class="section">
+          <article class="card">
+            <h3>Premium Style</h3>
+            <p>Inspired by modern interiors, natural canvas texture, and architectural folds.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<h2>About</h2>
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-box">
+          <h2 class="section-title">About Kalpaa Studio</h2>
+          <p>
+            Kalpaa Studio is a design-led studio focused on creating elegant DIY art kits for modern interiors.
+            Each piece is inspired by texture, simplicity, and the beauty of calm spaces.
+          </p>
+          <p>
+            Our goal is to make creativity feel guided and elevated, so you can create art that looks refined without needing advanced artistic experience.
+          </p>
+        </div>
 
-<p>
-Kalpaa Studio creates elegant DIY art kits designed for calm, beautiful interiors and personalisation.
-Each kit combines natural materials with guided structure so anyone can create refined art.
-</p>
+        <div class="about-box">
+          <h2 class="section-title">Why Choose Us</h2>
+          <p>• Warm neutral aesthetic</p>
+          <p>• Structured, guided designs</p>
+          <p>• Premium DIY experience</p>
+          <p>• Thoughtful art for beautiful homes</p>
+        </div>
+      </div>
+    </section>
 
-</section>
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2 class="section-title">Contact Us</h2>
+          <p class="section-subtitle" style="margin: 0 auto 24px;">
+            For product questions, collaborations, or customer support, reach out anytime.
+          </p>
+          <p><strong>Email:</strong> kalpaallc@gmail.com</p>
+          <p><strong>Instagram:</strong> kalpaallc</p>
+          <div class="buttons" style="justify-content: center; margin-top: 18px;">
+            <a class="btn btn-primary" href="mailto:kalpaallc@gmail.com">Email Kalpaa Studio</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<footer>
+    <section id="upcoming">
+      <div class="container">
+        <h2 class="section-title">Upcoming DIY Kits</h2>
+        <p class="section-subtitle">
+          Kalpaa Studio is growing into a curated collection of elegant DIY art experiences for calm, beautiful spaces.
+        </p>
 
-© Kalpaa Studio
+        <div class="cards">
+          <article class="card">
+            <h3>Mirror & Mixed Media</h3>
+            <p>Modern DIY wall decor concepts designed with texture, balance, and a refined neutral aesthetic.</p>
+          </article>
 
-</footer>
+          <article class="card">
+            <h3>Textured Surface Art</h3>
+            <p>Minimal handmade art projects that explore depth, softness, structure, and sculptural detail.</p>
+          </article>
 
+          <article class="card">
+            <h3>Seasonal Studio Drops</h3>
+            <p>Limited creative releases and new DIY kit ideas inspired by materials, interiors, and quiet luxury.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Kalpaa Studio. All rights reserved.
+    </div>
+  </footer>
 </body>
 </html>
