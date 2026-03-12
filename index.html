@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kalpaa Studio</title>
   <meta name="description" content="Kalpaa Studio creates elegant DIY art kits inspired by natural materials, calm interiors, and modern handmade wall decor." />
-  <meta name="keywords" content="DIY art kits, DIY wall art kit, minimalist wall decor, handmade wall art kit, craft wall decor, DIY home decor kit" />
+  <meta name="keywords" content="DIY art kits, DIY wall art kit, minimalist wall decor, handmade wall art kit, craft wall decor, DIY home decor kit, custom dimensional portrait, wedding portrait art" />
   <meta property="og:title" content="Kalpaa Studio – Crafted DIY Art for Calm Homes" />
-  <meta property="og:description" content="Elegant DIY art kits inspired by natural textures, sculptural forms, and calm modern interiors." />
+  <meta property="og:description" content="Elegant DIY art kits and dimensional custom portraits inspired by natural textures, sculptural forms, and calm modern interiors." />
   <style>
     :root {
       --bg: #f8f4ee;
@@ -100,7 +100,7 @@
     }
 
     .hero p {
-      max-width: 540px;
+      max-width: 720px;
       color: var(--muted);
       font-size: 1.06rem;
       margin-bottom: 28px;
@@ -137,80 +137,62 @@
     }
 
     .hero-visual {
-  background-image: url('studio-banner.jpg');
-  background-size: cover;
-  background-position: center;
-  border: 1px solid var(--border);
-  border-radius: 28px;
-  min-height: 520px;
-  padding: 44px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 0 20px 50px rgba(79, 62, 41, 0.08);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-visual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(248,244,238,0.84), rgba(248,244,238,0.30));
-}
-
-.hero-story {
-  position: relative;
-  z-index: 1;
-  background: rgba(255,255,255,0.88);
-  padding: 24px 28px;
-  border-radius: 18px;
-  max-width: 440px;
-  color: var(--text);
-  font-size: 0.98rem;
-  box-shadow: 0 10px 24px rgba(62, 55, 47, 0.08);
-}
-
-.hero-banner-title {
-  position: relative;
-  z-index: 1;
-  margin-bottom: 18px;
-  color: #6f4a33;
-}
-
-.hero-banner-title h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.4rem, 4.2vw, 5rem);
-  line-height: 1.02;
-  margin-bottom: 10px;
-}
-
-.hero-banner-title p {
-  margin: 0;
-  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #8a6549;
-}
-
-.hero-story {
-  background: rgba(255,255,255,0.85);
-  padding: 24px 28px;
-  border-radius: 16px;
-  max-width: 420px;
-  color: var(--text);
-  font-size: 0.98rem;
-}
-
-    .panel-set {
+      background-image: url('studio-banner.jpg');
+      background-size: cover;
+      background-position: center;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      min-height: 520px;
+      padding: 44px;
       display: flex;
-      gap: 16px;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      flex-wrap: nowrap;
+      box-shadow: 0 20px 50px rgba(79, 62, 41, 0.08);
+      position: relative;
+      overflow: hidden;
     }
 
-    
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(248,244,238,0.84), rgba(248,244,238,0.30));
+    }
+
+    .hero-banner-title {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 18px;
+      color: #6f4a33;
+    }
+
+    .hero-banner-title h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.4rem, 4.2vw, 5rem);
+      line-height: 1.02;
+      margin-bottom: 10px;
+    }
+
+    .hero-banner-title p {
+      margin: 0;
+      font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8a6549;
+      max-width: none;
+    }
+
+    .hero-story {
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.88);
+      padding: 24px 28px;
+      border-radius: 18px;
+      max-width: 440px;
+      color: var(--text);
+      font-size: 0.98rem;
+      box-shadow: 0 10px 24px rgba(62, 55, 47, 0.08);
+    }
 
     section {
       padding: 64px 0;
@@ -229,7 +211,7 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 22px;
     }
 
@@ -251,6 +233,20 @@
       margin-bottom: 18px;
     }
 
+    .product-card {
+      text-align: left;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 18px;
+      border: 1px solid var(--border);
+      background: #f3ece2;
+    }
+
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -265,6 +261,38 @@
       padding: 30px;
     }
 
+    .review-carousel {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .review-track {
+      display: flex;
+      gap: 22px;
+      width: max-content;
+      animation: scrollReviews 40s linear infinite;
+      padding-bottom: 8px;
+    }
+
+    .review-card {
+      width: 340px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 14px 36px rgba(79, 62, 41, 0.04);
+    }
+
+    .review-card p {
+      margin: 0 0 12px;
+      color: var(--text);
+    }
+
+    .review-card span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
     .contact-box {
       text-align: center;
       background: linear-gradient(180deg, #fffaf5, #f7efe4);
@@ -277,6 +305,11 @@
       padding: 28px 0 46px;
       color: var(--muted);
       font-size: 0.94rem;
+    }
+
+    @keyframes scrollReviews {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
     @media (max-width: 900px) {
@@ -295,29 +328,12 @@
       }
     }
 
-      .hero-visual {
-        min-height: 420px;
-      }
-
-      .hero-story {
-        max-width: 100%;
-      }
-    }
-
-      .hero-visual {
-        min-height: 340px;
-      }
-
-      .panel { width: 90px; height: 170px; }
-    }
-
     @media (max-width: 560px) {
       .nav { flex-direction: column; align-items: flex-start; }
       .nav-links { gap: 14px; }
       .hero { padding-top: 42px; }
-      .panel-set { gap: 10px; }
-      .panel { width: 74px; height: 140px; }
-      .fold.one, .fold.two, .fold.three { width: 56px; height: 100px; left: 9px; top: 20px; }
+      .review-card { width: 260px; }
+      .product-image { height: 220px; }
     }
   </style>
 </head>
@@ -326,10 +342,10 @@
     <div class="container nav">
       <a href="#home" class="brand">KALPAA STUDIO</a>
       <nav class="nav-links">
-        <a href="https://www.pinterest.com/kalpaallc" target="_blank">Pinterest</a>
-        <a href="https://www.instagram.com/kalpaacrafts/" target="_blank">Instagram</a>
+        <a href="https://www.pinterest.com/kalpaallc" target="_blank" rel="noopener noreferrer">Pinterest</a>
+        <a href="https://www.instagram.com/kalpaacrafts/" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="#home">Home</a>
-        <a href="#product">Product</a>
+        <a href="#products">Products</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -343,12 +359,12 @@
           <div class="eyebrow">Elevated DIY art</div>
           <h1>Minimal DIY art for calm, beautiful spaces.</h1>
           <p>
-            Kalpaa Studio creates elegant DIY art kits inspired by natural materials,
-            sculptural forms, and warm neutral interiors.
+            Kalpaa Studio creates elegant DIY art kits and dimensional custom portraits inspired by
+            natural materials, sculptural forms, and warm neutral interiors.
           </p>
           <div class="buttons">
-            <a class="btn btn-primary" href="https://sweety441.etsy.com" target="_blank" rel="noopener noreferrer">Shop on Etsy</a>
-            <a class="btn btn-secondary" href="#product">View Product</a>
+            <a class="btn btn-primary" href="https://kalpaastudio.etsy.com" target="_blank" rel="noopener noreferrer">Shop on Etsy</a>
+            <a class="btn btn-secondary" href="#products">View Products</a>
           </div>
         </div>
       </div>
@@ -362,35 +378,97 @@
             <p>Crafted DIY Art for Calm Homes</p>
           </div>
           <div class="hero-story">
-            Inspired by natural materials, warm textures, and the quiet beauty of handmade craft, Kalpaa Studio creates DIY art experiences that bring calm creativity into the home. Each kit celebrates natural elements, thoughtful design, and the simple goodness of making something beautiful with your hands.
+            Inspired by natural materials, warm textures, and the quiet beauty of handmade craft,
+            Kalpaa Studio creates DIY art experiences that bring calm creativity into the home.
+            Each kit celebrates natural elements, thoughtful design, and the simple goodness of
+            making something beautiful with your hands.
           </div>
         </div>
       </div>
     </section>
 
-    <section id="product">
+    <section id="products">
       <div class="container">
-        <h2 class="section-title">Featured Product</h2>
+        <h2 class="section-title">Products</h2>
         <p class="section-subtitle">
-          A refined DIY art experience designed to help beginners create premium-looking DIY wall decor with guided structure and simple materials.
+          Thoughtfully designed DIY art and custom keepsakes created to bring beauty, texture,
+          and meaningful detail into your home.
         </p>
 
         <div class="cards">
-          <article class="card">
-            <h3>DIY Art Kit</h3>
-            <p>Create a soft, minimal handmade wall art piece with a calm neutral aesthetic.</p>
-            <a class="btn btn-secondary" href="https://sweety441.etsy.com" target="_blank" rel="noopener noreferrer">Buy on Etsy</a>
+          <article class="card product-card">
+            <img src="textile-art.jpg" alt="Kalpaa Studio Textile Sculpture Art Kit" class="product-image" />
+            <h3>Textile Sculpture Art Kit</h3>
+            <p>
+              Elevated DIY art for calm homes. Designed with natural elements, sculptural folds,
+              and soft neutral textures, this guided kit includes a template to follow and all
+              materials needed to create your own elegant wall art and proudly flaunt it at home.
+            </p>
+            <a class="btn btn-secondary" href="https://www.etsy.com/listing/4468575048/pleated-textile-sculpture-kit" target="_blank" rel="noopener noreferrer">View on Etsy</a>
           </article>
 
-          <article class="card">
-            <h3>Beginner Friendly</h3>
-            <p>Designed with guided placement so the process feels simple, elegant, and approachable.</p>
+          <article class="card product-card">
+            <img src="dimensional-portrait.jpg" alt="Kalpaa Studio Custom Dimensional Portrait" class="product-image" />
+            <h3>Dimensional Custom Portrait</h3>
+            <p>
+              Turn your most meaningful moment into timeless art. Using your photo as inspiration,
+              Kalpaa Studio transforms it into a handcrafted mixed-media portrait with layered
+              texture, elegant detail, and dimensional floral elements for a keepsake you will treasure.
+            </p>
+            <a class="btn btn-secondary" href="https://www.etsy.com/listing/4470791291/custom-3d-wedding-portrait-mixed-media" target="_blank" rel="noopener noreferrer">View on Etsy</a>
           </article>
+        </div>
+      </div>
+    </section>
 
-          <article class="card">
-            <h3>Premium Style</h3>
-            <p>Inspired by modern interiors, natural canvas texture, and architectural folds.</p>
-          </article>
+    <section id="reviews">
+      <div class="container">
+        <h2 class="section-title">Kind Words</h2>
+        <p class="section-subtitle">
+          A small preview of customer feedback from Kalpaa Studio creations.
+        </p>
+        <div class="review-carousel">
+          <div class="review-track">
+            <article class="review-card">
+              <p>“I was completely blown away by the quality of our custom wedding portrait! The artist captured the exact sparkle in our eyes and even the flow of my dress from one of our favorite photos. It feels so personal and elegant — like a moment frozen in time.”</p>
+              <span>— Emma T.</span>
+            </article>
+
+            <article class="review-card">
+              <p>“I ordered the portrait as an anniversary surprise for my husband, and we both got teary when we opened it. The detail is incredible and the soft background touches give it a dreamy, timeless look.”</p>
+              <span>— Shelly</span>
+            </article>
+
+            <article class="review-card">
+              <p>“I can’t stop looking at our custom wedding portrait! The colors, texture, and light reflection make it look even better in person than online. It tells the story of our love day perfectly.”</p>
+              <span>— Laura</span>
+            </article>
+
+            <article class="review-card">
+              <p>“From start to finish the experience was amazing. The artist communicated beautifully and the final piece captured not just our faces but the emotions of the day.”</p>
+              <span>— Sofia</span>
+            </article>
+
+            <article class="review-card">
+              <p>“I was completely blown away by the quality of our custom wedding portrait! The artist captured the exact sparkle in our eyes and even the flow of my dress from one of our favorite photos. It feels so personal and elegant — like a moment frozen in time.”</p>
+              <span>— Emma T.</span>
+            </article>
+
+            <article class="review-card">
+              <p>“I ordered the portrait as an anniversary surprise for my husband, and we both got teary when we opened it. The detail is incredible and the soft background touches give it a dreamy, timeless look.”</p>
+              <span>— Shelly</span>
+            </article>
+
+            <article class="review-card">
+              <p>“I can’t stop looking at our custom wedding portrait! The colors, texture, and light reflection make it look even better in person than online. It tells the story of our love day perfectly.”</p>
+              <span>— Laura</span>
+            </article>
+
+            <article class="review-card">
+              <p>“From start to finish the experience was amazing. The artist communicated beautifully and the final piece captured not just our faces but the emotions of the day.”</p>
+              <span>— Sofia</span>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -400,36 +478,22 @@
         <div class="about-box">
           <h2 class="section-title">About Kalpaa Studio</h2>
           <p>
-            Kalpaa Studio is a design-led studio focused on creating elegant DIY art kits for modern interiors.
-            Each piece is inspired by texture, simplicity, and the beauty of calm spaces.
+            Kalpaa Studio is a design-led studio focused on creating elegant DIY art kits and
+            dimensional custom portraits for modern interiors and meaningful keepsakes.
           </p>
           <p>
-            Our goal is to make creativity feel guided and elevated, so you can create art that looks refined without needing advanced artistic experience.
+            Each piece is inspired by texture, simplicity, and the beauty of calm spaces. Our goal
+            is to make creativity feel guided and elevated, so you can create or display art that
+            feels refined, personal, and timeless.
           </p>
         </div>
 
         <div class="about-box">
           <h2 class="section-title">Why Choose Us</h2>
           <p>• Warm neutral aesthetic</p>
-          <p>• Structured, guided designs</p>
-          <p>• Premium DIY experience</p>
-          <p>• Thoughtful art for beautiful homes</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="contact-box">
-          <h2 class="section-title">Contact Us</h2>
-          <p class="section-subtitle" style="margin: 0 auto 24px;">
-            For product questions, collaborations, or customer support, reach out anytime.
-          </p>
-          <p><strong>Email:</strong> kalpaallc@gmail.com</p>
-          <p><strong>Instagram:</strong> kalpaallc</p>
-          <div class="buttons" style="justify-content: center; margin-top: 18px;">
-            <a class="btn btn-primary" href="mailto:kalpaallc@gmail.com">Email Kalpaa Studio</a>
-          </div>
+          <p>• Guided, beginner-friendly creative experiences</p>
+          <p>• Premium handmade feel</p>
+          <p>• Thoughtful art for beautiful homes and meaningful gifts</p>
         </div>
       </div>
     </section>
@@ -448,14 +512,26 @@
           </article>
 
           <article class="card">
-            <h3>Textured Surface Art</h3>
-            <p>Minimal handmade art projects that explore depth, softness, structure, and sculptural detail.</p>
-          </article>
-
-          <article class="card">
             <h3>Seasonal Studio Drops</h3>
             <p>Limited creative releases and new DIY kit ideas inspired by materials, interiors, and quiet luxury.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2 class="section-title">Contact Us</h2>
+          <p class="section-subtitle" style="margin: 0 auto 24px;">
+            For product questions, collaborations, or customer support, reach out anytime.
+          </p>
+          <p><strong>Email:</strong> kalpaallc@gmail.com</p>
+          <p><strong>Instagram:</strong> @kalpaacrafts</p>
+          <p><strong>Pinterest:</strong> @kalpaallc</p>
+          <div class="buttons" style="justify-content: center; margin-top: 18px;">
+            <a class="btn btn-primary" href="mailto:kalpaallc@gmail.com">Email Kalpaa Studio</a>
+          </div>
         </div>
       </div>
     </section>
