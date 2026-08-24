@@ -35,6 +35,7 @@
       localStorage.setItem(CONSENT_KEY,choice);
       banner.hidden=true;
       if(choice==='granted')startAnalytics();
+      else if(started)location.reload();
     });
     return banner;
   }
