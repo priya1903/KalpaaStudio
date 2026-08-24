@@ -1,4 +1,5 @@
 (()=>{
+  // Privacy-first traffic measurement for Kalpaa Studio.
   const MEASUREMENT_ID='G-EJRNRTBCPQ';
   const CONSENT_KEY='kalpaa_analytics_consent';
   let started=false;
