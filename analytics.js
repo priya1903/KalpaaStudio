@@ -48,6 +48,11 @@
   else if(!choice)showPreferences();
 
   document.addEventListener('click',event=>{
+    const checkout=event.target.closest('a[data-checkout="stripe"]');
+    if(checkout&&started){
+      gtag('event','begin_checkout',{currency:'USD',items:[{item_id:checkout.dataset.productId,item_name:checkout.dataset.productName}]});
+      return;
+    }
     const link=event.target.closest('a[href*="etsy.com"]');
     if(!link||!started)return;
     gtag('event','etsy_click',{link_url:link.href,product_name:document.querySelector('.detail-panel h1')?.textContent||'Shop'});
